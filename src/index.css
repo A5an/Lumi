@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------
+   TOKENS — REPLACE THESE 1:1
+   --------------------------- */
+:root {
+  /* Layout container paddings (inspect body > container on live) */
+  --container-pad: 1rem;
+  --container-pad-sm: 1.25rem;
+  --container-pad-lg: 2rem;
+  --container-pad-xl: 2.5rem;
+  --container-pad-2xl: 3rem;
+
+  /* Colors — paste exact hex/hsl from live site */
+  --color-bg: #0b0b0e;       /* TODO: replace with exact */
+  --color-fg: #e9eef5;       /* TODO: replace with exact */
+  --color-muted: #a0a7b8;    /* TODO: replace with exact */
+  --color-primary: #5ee1ff;  /* TODO: replace with exact */
+  --color-accent: #7a5cff;   /* TODO: replace with exact */
+  --color-ring: rgba(126, 92, 255, 0.45); /* focus ring tint */
+
+  /* Radii & Shadows — copy from cards/buttons on live */
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --shadow-btn: 0 6px 20px rgba(122, 92, 255, 0.4);
+
+  /* Easing — copy cubic-beziers from live */
+  --ease-hero: cubic-bezier(.22, 1, .36, 1);
+  --ease-hover: cubic-bezier(.2, .8, .2, 1);
+
+  /* Motion timings — verify exact durations + delays */
+  --dur-xs: 0.25s;
+  --dur-sm: 0.45s;
+  --dur-md: 0.75s;
+  --dur-lg: 1.0s;
+  --dur-xl: 1.35s;
+
+  /* Typography — swap with exact families/sizes/leading per breakpoint */
+  --font-sans: "Inter";
+}
+
+/* Global resets & selection */
+::selection { background: color-mix(in oklab, var(--color-accent) 30%, white); color: #05060a; }
+
+html, body, #root { height: 100%; }
+
+html { scroll-behavior: smooth; }
+
+.bg-noise:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('/assets/noise.png');
+  background-size: 512px 512px;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-3 text-sm font-semibold;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  color: #05060a;
+  box-shadow: var(--shadow-btn);
+  transition: transform var(--dur-sm) var(--ease-hover), filter var(--dur-sm) var(--ease-hover);
+}
+.btn:hover { transform: translateY(-1px) scale(1.02); filter: saturate(1.06); }
+.btn:active { transform: translateY(0) scale(0.99); }
+
+.card {
+  @apply rounded-2xl bg-[rgba(255,255,255,0.03)] backdrop-blur-md;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-glass {
+  @apply sticky top-0 z-50 w-full backdrop-blur-xl;
+  background: rgba(10, 11, 16, 0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.drawer {
+  @apply fixed inset-0 z-50;
+  background: rgba(5, 6, 10, 0.6);
+  backdrop-filter: blur(8px);
+}
