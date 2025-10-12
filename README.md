@@ -35,3 +35,4 @@ npm run dev
 
 ## Notes
 - This repo avoids creative deviation. All values are **tokenized** so you can paste exact numbers and ship a clone indistinguishable from production.
+# lingopulse-clone2
