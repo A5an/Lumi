@@ -3,11 +3,9 @@ import { motion } from 'framer-motion';
 import { fadeUp } from './AnimationConfig';
 
 const links = [
-  { href: '#features', label: 'Features' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
-  { href: '#careers', label: 'Careers' }
+  // { href: '#features', label: 'Features' },
+  // { href: '#how-it-works', label: 'How It Works' },
+  // { href: '#testimonials', label: 'Testimonials' }
 ];
 
 export default function Navbar() {
@@ -20,15 +18,15 @@ export default function Navbar() {
         initial="hidden" animate="show" variants={fadeUp(0, -8)}
       >
         <a href="#" className="flex items-center gap-2">
-          <img src="/assets/logo.svg" alt="Stimuler" className="h-7 w-auto" />
-          <span className="sr-only">Stimuler</span>
+          <img src="/assets/logo.png" alt="Lumi" className="h-7 w-auto" />
+          <span className="text-xl font-bold text-fg">Lumi</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-muted">
           {links.map(l => (
             <a key={l.label} href={l.href} className="hover:text-fg transition-colors">{l.label}</a>
           ))}
-          <a href="#download" className="btn ml-2">Download now</a>
+          <a href="#whitelist" className="btn ml-2">Join Whitelist</a>
         </nav>
 
         <button aria-label="Open menu"
@@ -54,7 +52,7 @@ export default function Navbar() {
                   {l.label}
                 </a>
               ))}
-              <a href="#download" className="btn mt-2">Download now</a>
+              <a href="#whitelist" className="btn mt-2">Join Whitelist</a>
             </div>
           </motion.div>
         </div>

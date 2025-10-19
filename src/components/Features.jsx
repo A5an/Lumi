@@ -3,22 +3,28 @@ import { fadeUp, stagger } from './AnimationConfig';
 
 const FEATURES = [
   {
-    id: 'impromptu',
-    title: 'Impromptu speaking',
-    body: 'Get a topic, speak for 60 seconds, get live feedback. Unlimited topics to practice.',
-    img: '/assets/feature-impromptu.png'
+    id: 'replaces-fragmentation',
+    title: 'Replaces 5+ Apps',
+    body: 'Grammar drills, flashcards, speaking bots, videos — all replaced by one intelligent system.',
+    icon: '📱'
   },
   {
-    id: 'themes',
-    title: 'Chat on themes with Sarah !',
-    body: 'Practice across 20+ exciting themes and get instant feedback. Samples & tips included.',
-    img: '/assets/feature-themes.png'
+    id: 'safe-practice',
+    title: 'Practice Without Fear',
+    body: 'No judgment, no scheduling. Practice speaking anytime with AI that never gets impatient.',
+    icon: '🗣️'
   },
   {
-    id: 'tests',
-    title: 'Evaluate Daily with speaking tests',
-    body: 'A set of speech exercises customized to your strengths. Practice ~10 minutes a day.',
-    img: '/assets/feature-tests.png'
+    id: 'personal-content',
+    title: 'Learn From What You Love',
+    body: 'Use Netflix shows, work emails, or TikToks. Real content that matches your interests and level.',
+    icon: '🎯'
+  },
+  {
+    id: 'tutor-quality-cost',
+    title: '1/10th the Cost of Tutors',
+    body: 'Get personalized feedback and corrections at a fraction of private tutor prices.',
+    icon: '💰'
   }
 ];
 
@@ -26,30 +32,34 @@ export default function Features() {
   return (
     <section id="features" className="relative">
       <div className="container py-16 md:py-24 lg:py-28">
+        {/* Value Proposition */}
         <motion.div
           initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}
           variants={stagger(0.08, 0)}
-          className="max-w-3xl"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
           <motion.span variants={fadeUp(0.02)} className="mb-3 inline-block rounded-full border border-[rgba(255,255,255,0.12)] px-3 py-1 text-xs tracking-wider text-muted">
-            FEATURES
+            HOW IT WORKS
           </motion.span>
           <motion.h2 variants={fadeUp(0.06)} className="text-3xl font-bold md:text-5xl">
-            English Practice enables you to speak more than ever
+            The <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">all-in-one English super-app</span> you've been waiting for
           </motion.h2>
+          <motion.p variants={fadeUp(0.1)} className="mt-6 text-lg leading-relaxed text-muted">
+            Stop juggling Duolingo + HelloTalk + grammar books + YouTube videos. Get everything in one place.
+          </motion.p>
         </motion.div>
 
-        <div className="mt-10 grid gap-6 md:mt-14 md:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:mt-14 md:grid-cols-2">
           {FEATURES.map((f, i) => (
             <motion.article
               key={f.id}
               initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}
               variants={fadeUp(0.06 * i)}
-              className="card p-5 md:p-6 lg:p-7"
+              className="card p-4 md:p-5 text-center"
             >
-              <img src={f.img} alt="" className="mb-5 h-auto w-full rounded-xl" />
-              <h3 className="text-lg font-semibold md:text-xl">{f.title}</h3>
-              <p className="mt-2 text-sm text-muted md:text-base">{f.body}</p>
+              <div className="mb-4 text-3xl">{f.icon}</div>
+              <h3 className="text-base font-semibold md:text-lg">{f.title}</h3>
+              <p className="mt-2 text-xs text-muted md:text-sm">{f.body}</p>
             </motion.article>
           ))}
         </div>

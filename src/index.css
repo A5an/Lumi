@@ -18,8 +18,8 @@
   --color-fg: #e9eef5;       /* TODO: replace with exact */
   --color-muted: #a0a7b8;    /* TODO: replace with exact */
   --color-primary: #5ee1ff;  /* TODO: replace with exact */
-  --color-accent: #7a5cff;   /* TODO: replace with exact */
-  --color-ring: rgba(126, 92, 255, 0.45); /* focus ring tint */
+  --color-accent: #996DC1;   /* Updated purple color */
+  --color-ring: rgba(153, 109, 193, 0.45); /* focus ring tint - matches new purple */
 
   /* Radii & Shadows — copy from cards/buttons on live */
   --radius-xl: 16px;
@@ -27,7 +27,7 @@
 
   --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.35);
   --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.45);
-  --shadow-btn: 0 6px 20px rgba(122, 92, 255, 0.4);
+  --shadow-btn: 0 6px 20px rgba(153, 109, 193, 0.4);
 
   /* Easing — copy cubic-beziers from live */
   --ease-hero: cubic-bezier(.22, 1, .36, 1);
