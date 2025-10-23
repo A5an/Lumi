@@ -34,7 +34,7 @@ export default function Hero() {
             className="relative mt-12 max-w-2xl mx-auto"
           >
             <motion.video
-              src="/assets/Demo.MP4"
+              src="/assets/Demo.mp4"
               className="relative z-30 mx-auto w-[60%] max-w-[320px] drop-shadow-[0_40px_120px_rgba(90,60,255,.35)]"
               controls
               autoPlay
