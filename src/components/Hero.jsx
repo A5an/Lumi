@@ -34,7 +34,7 @@ export default function Hero() {
             className="relative mt-12 max-w-2xl mx-auto"
           >
             <motion.video
-              src="/assets/Demo.mp4"
+              src="/assets/demo.mp4"
               className="relative z-30 mx-auto w-[60%] max-w-[320px] drop-shadow-[0_40px_120px_rgba(90,60,255,.35)]"
               controls
               autoPlay
@@ -45,6 +45,7 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1, transition: { duration: 0.9, ease: easeHero } }}
               whileInView={{ y: 0 }} 
               viewport={{ once: true }}
+
             />
             {/* <motion.img
               src="/assets/device-2.png" alt="AI Teaching Interface"
