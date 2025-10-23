@@ -33,11 +33,18 @@ export default function Hero() {
             variants={fadeUp(0.32, 20)}
             className="relative mt-12 max-w-2xl mx-auto"
           >
-            <motion.img
-              src="/assets/device-1.png" alt="LingoPulse App Interface"
+            <motion.video
+              src="/assets/Demo.MP4"
               className="relative z-30 mx-auto w-[60%] max-w-[320px] drop-shadow-[0_40px_120px_rgba(90,60,255,.35)]"
-              initial={{ y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { duration: 0.9, ease: easeHero } }}
-              whileInView={{ y: 0 }} viewport={{ once: true }}
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              initial={{ y: 24, opacity: 0 }} 
+              animate={{ y: 0, opacity: 1, transition: { duration: 0.9, ease: easeHero } }}
+              whileInView={{ y: 0 }} 
+              viewport={{ once: true }}
             />
             {/* <motion.img
               src="/assets/device-2.png" alt="AI Teaching Interface"
